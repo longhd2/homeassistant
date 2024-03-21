@@ -14,14 +14,14 @@ sensor:
 Thêm trong automation
 ```sh
 automation:
-  # Auto Nhắc rằm và mùng 1 qua ViPi
+  # Auto Nhắc rằm và mùng 1 qua ViPi vào 6h sáng và 18h tối vào trước 1 ngày và ngày rằm + mùng 1
   - id: '0001'
     alias: Nhắc rằm mùng 1
     trigger:
       - platform: time
-        at: '06:30:00'
+        at: '06:00:00'
       - platform: time
-        at: '16:04:00'
+        at: '18:00.:00'
     action:
       - service: script.phat_loa_vipi
         data_template:
