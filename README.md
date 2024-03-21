@@ -1,9 +1,15 @@
 # homeassistant
 
 # Thêm trong configuration:
+
+```sh
 sensor:
   - platform: lich_am
 
+```
+
+# Thêm trong automation
+```sh
 automation:
   # Auto Nhắc rằm và mùng 1 qua ViPi
   - id: '0001'
@@ -34,3 +40,5 @@ automation:
               "Bản tin thông báo: Hôm nay là mùng 1. Nhằm {{ states('sensor.ngay_am_hom_nay') }}."
               "giờ tốt là giờ: {{ states('sensor.gio_tot_hom_nay') }} giờ xấu là giờ: {{ states('sensor.gio_xau_hom_nay') }}."
             {% endif %}  
+
+   ```
