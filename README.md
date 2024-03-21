@@ -1,6 +1,8 @@
 # Homeassistant
 # custom_components lịch âm
 Tải thư mục lịch âm và chép vào thư mục custom_components trong hass
+
+
 Thêm trong configuration:
 
 ```sh
