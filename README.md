@@ -1,6 +1,7 @@
-# homeassistant
-
-# Thêm trong configuration:
+# Homeassistant
+# custom_components lịch âm
+Tải thư mục lịch âm và chép vào thư mục custom_components trong hass
+Thêm trong configuration:
 
 ```sh
 sensor:
@@ -8,7 +9,7 @@ sensor:
 
 ```
 
-# Thêm trong automation
+Thêm trong automation
 ```sh
 automation:
   # Auto Nhắc rằm và mùng 1 qua ViPi
