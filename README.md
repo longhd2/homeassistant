@@ -45,3 +45,39 @@ automation:
             {% endif %}  
 
    ```
+# custom_components edge_tts
+Tải thư mục edge_tts và chép vào thư mục custom_components trong hass
+
+
+Thêm trong configuration:
+tts:
+  - platform: edge_tts
+    service_name: edge
+    language: vi-VN-HoaiMyNeural
+    volume: +10%
+    rate: -10%
+
+   ```
+Ví dụ về scrip phát giọng Nữ edge-tts qua loa google
+```sh
+  phat_loa_phong_khach:
+    alias: "script phat loa phòng khách"
+    sequence:
+      - service: media_player.volume_set
+        target:
+          entity_id: media_player.phong_khach_2
+        data_template:
+          volume_level: "{{ volume | default(0.5) }}"  # Sử dụng giá trị mặc định là 0.5 nếu không có giá trị được cung cấp
+      - service: tts.edge
+        data_template:
+          entity_id: media_player.phong_khach_2
+          message: "{{ message }}"
+   ```
+  test_script_media_pk:
+    alias: Test script phát media player phòng khách
+    sequence:
+      - service: script.phat_loa_phong_khach
+        data:
+          message: 'đây là scrip test loa media player phòng khách'
+          volume: 0.5  # Thay 0.5 bằng mức âm lượng mong muốn (giữa 0 và 1)
+   ```
