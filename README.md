@@ -50,6 +50,7 @@ Tải thư mục edge_tts và chép vào thư mục custom_components trong hass
 
 
 Thêm trong configuration:
+```sh
 tts:
   - platform: edge_tts
     service_name: edge
@@ -72,7 +73,7 @@ Ví dụ về scrip phát giọng Nữ edge-tts qua loa google
         data_template:
           entity_id: media_player.phong_khach_2
           message: "{{ message }}"
-   ```
+
   test_script_media_pk:
     alias: Test script phát media player phòng khách
     sequence:
